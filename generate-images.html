@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Placeholder Images</title>
+</head>
+<body>
+    <h2>Generating placeholder images...</h2>
+    <script>
+        const colors = [
+            ['#FFB6C1', '#FFC0CB'],
+            ['#E6B8D7', '#D8A7C5'],
+            ['#FFD6E8', '#FFC1E0'],
+            ['#F5C2D8', '#E8B5CE']
+        ];
+
+        const titles = ['The First Chapter', 'Between Words', 'Unspoken Promises', 'Still Growing'];
+
+        for (let i = 0; i < 4; i++) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 800;
+            canvas.height = 600;
+            const ctx = canvas.getContext('2d');
+
+            const gradient = ctx.createLinearGradient(0, 0, 800, 600);
+            gradient.addColorStop(0, colors[i][0]);
+            gradient.addColorStop(1, colors[i][1]);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 800, 600);
+
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.font = 'bold 48px Playfair Display, serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(titles[i], 400, 300);
+
+            canvas.toBlob(blob => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `page${i + 1}.jpg`;
+                a.click();
+                URL.revokeObjectURL(url);
+            }, 'image/jpeg', 0.9);
+        }
+
+        document.body.innerHTML += '<p>✅ 4 images downloaded! Move them to the images/ folder.</p>';
+    </script>
+</body>
+</html>

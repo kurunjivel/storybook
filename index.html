@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>The Quiet Architecture of Us</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📖</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="particles"></canvas>
+    
+    <div class="book-container">
+        <div class="book">
+            <div class="bookmark"></div>
+            <div class="page" data-page="0">
+                <div class="front cover">
+                    <h1>The Quiet Architecture of Us</h1>
+                    <p class="subtitle">A story written in silence.</p>
+                </div>
+                <div class="back">
+                    <div class="content">
+                        <h2>The First Chapter</h2>
+                        <div class="image-frame" style="background: linear-gradient(135deg, #FFB6C1, #FFC0CB); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-family: 'Playfair Display', serif;">
+                            <img src="images/page1.jpg" alt="The First Chapter" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='The First Chapter';">
+                        </div>
+                        <p class="typewriter" data-text="In the beginning, we were strangers navigating the same crowded room. Your laughter cut through the noise like sunlight through morning fog. I didn't know then that this moment would become the foundation of everything we'd build together."></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" data-page="1">
+                <div class="front">
+                    <div class="content">
+                        <h2>Between Words</h2>
+                        <div class="image-frame" style="background: linear-gradient(135deg, #E6B8D7, #D8A7C5); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-family: 'Playfair Display', serif;">
+                            <img src="images/page2.jpg" alt="Between Words" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='Between Words';">
+                        </div>
+                        <p class="typewriter" data-text="We learned to speak in silences, in the spaces between sentences where understanding lives. Your hand finding mine in the dark, the way you know my thoughts before I voice them—this is our language, written in gestures and glances."></p>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="content">
+                        <h2>Unspoken Promises</h2>
+                        <div class="image-frame" style="background: linear-gradient(135deg, #FFD6E8, #FFC1E0); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-family: 'Playfair Display', serif;">
+                            <img src="images/page3.jpg" alt="Unspoken Promises" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='Unspoken Promises';">
+                        </div>
+                        <p class="typewriter" data-text="We never needed grand declarations. Our promises were whispered in morning coffee rituals, in the way you save the last bite for me, in how we've memorized each other's dreams. These small eternities are our vows."></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" data-page="2">
+                <div class="front">
+                    <div class="content">
+                        <h2>Still Growing</h2>
+                        <div class="image-frame" style="background: linear-gradient(135deg, #F5C2D8, #E8B5CE); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-family: 'Playfair Display', serif;">
+                            <img src="images/page4.jpg" alt="Still Growing" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='Still Growing';">
+                        </div>
+                        <p class="typewriter" data-text="Love isn't a destination but a garden we tend together. Through seasons of joy and storms of doubt, we keep planting seeds of patience, watering them with forgiveness. What we're building has no blueprint—only trust and time."></p>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="content back-cover">
+                        <p class="ending">And so we continue,<br>writing our story<br>one quiet moment<br>at a time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button id="prevBtn" class="nav-btn">←</button>
+            <span id="pageIndicator">1 / 5</span>
+            <button id="nextBtn" class="nav-btn">→</button>
+        </div>
+    </div>
+
+    <audio id="flipSound" preload="auto">
+        <source src="sounds/flip.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
